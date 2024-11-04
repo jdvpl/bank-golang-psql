@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: bank_db
+    environment:
+      POSTGRES_USER: jdvpl
+      POSTGRES_PASSWORD: jdvpl
+      POSTGRES_DB: bank
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
